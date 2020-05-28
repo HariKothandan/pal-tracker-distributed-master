@@ -1,7 +1,6 @@
 ---
 applications:
-  -
-    env:
+  - env:
       JBP_CONFIG_OPEN_JDK_JRE: "{ jre: { version: 11.+ } }"
       REGISTRATION_SERVER_ENDPOINT: "http://registration-pal-156090.cfapps.io"
     instances: 1
@@ -9,7 +8,6 @@ applications:
     name: tracker-backlog
     path: ./applications/backlog-server/build/libs/backlog-server.jar
     routes:
-      -
-        route: backlog-pal-156090.cfapps.io
+      - route: backlog-pal-156090.cfapps.io
     services:
       - tracker-backlog-database

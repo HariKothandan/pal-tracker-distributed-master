@@ -1,14 +1,12 @@
 ---
 applications:
-  -
-    env:
+  - env:
       JBP_CONFIG_OPEN_JDK_JRE: "{ jre: { version: 11.+ } }"
     instances: 1
     memory: 1G
     name: tracker-registration
     path: ./applications/registration-server/build/libs/registration-server.jar
     routes:
-      -
-        route: registration-pal-156090.cfapps.io
+      - route: registration-pal-156090.cfapps.io
     services:
       - tracker-registration-database
