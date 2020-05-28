@@ -1,12 +1,15 @@
+---
 applications:
-  - name: tracker-allocations
+  -
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: "{ jre: { version: 11.+ } }"
+      REGISTRATION_SERVER_ENDPOINT: "http://registration-pal-156090.cfapps.io"
+    instances: 1
+    memory: 1G
+    name: tracker-allocations
     path: ./applications/allocations-server/build/libs/allocations-server.jar
     routes:
-      - route: allocations-pal-156090.cfapps.io
-    memory: 1G
-    instances: 1
-    env:
-      REGISTRATION_SERVER_ENDPOINT: http://registration-pal-156090.cfapps.io
-      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+      -
+        route: allocations-pal-156090.cfapps.io
     services:
       - tracker-allocations-database
