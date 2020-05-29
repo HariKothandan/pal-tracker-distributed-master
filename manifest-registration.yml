@@ -9,4 +9,5 @@ applications:
     routes:
       - route: registration-pal-156090.cfapps.io
     services:
-      - tracker-registration-database
+      #- tracker-registration-database
+      - tracker-service-registry
