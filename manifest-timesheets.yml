@@ -1,8 +1,9 @@
 ---
 applications:
   - env:
-      JBP_CONFIG_OPEN_JDK_JRE: "{ jre: { version: 11.+ } }"
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
       #REGISTRATION_SERVER_ENDPOINT: "http://registration-pal-156090.cfapps.io"
+      GRANT_TYPE: client_credentials
     instances: 1
     memory: 1G
     name: tracker-timesheets
@@ -10,5 +11,6 @@ applications:
     routes:
       - route: timesheets-pal-156090.cfapps.io
     services:
-      #- tracker-timesheets-database
+      - tracker-timesheets-database
       - tracker-service-registry
+      - tracker-sso

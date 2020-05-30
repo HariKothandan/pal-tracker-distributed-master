@@ -1,8 +1,9 @@
 ---
 applications:
   - env:
-      JBP_CONFIG_OPEN_JDK_JRE: "{ jre: { version: 11.+ } }"
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
       #REGISTRATION_SERVER_ENDPOINT: "http://registration-pal-156090.cfapps.io"
+      GRANT_TYPE: client_credentials
     instances: 1
     memory: 1G
     name: tracker-allocations
@@ -10,5 +11,6 @@ applications:
     routes:
       - route: allocations-pal-156090.cfapps.io
     services:
-      #- tracker-allocations-database
+      - tracker-allocations-database
       - tracker-service-registry
+      - tracker-sso
